@@ -817,212 +817,212 @@
         let autoAdvanceTimeout = null;
 
         const allQuestions = [
-            {
-                question: "What is Irys?",
-                options: ["A. A decentralized messaging app", "B. The first programmable datachain", "C. A traditional database protocol", "D. A Bitcoin sidechain"],
-                correct: 1
-            },
-            {
-                question: "What core problem does Irys solve?",
-                options: ["A. Expensive compute cycles", "B. Lack of affordable, verifiable onchain storage", "C. Cross-chain token swaps", "D. Centralized governance in DAOs"],
-                correct: 1
-            },
-            {
-                question: "What does \"programmable data\" mean in Irys?",
-                options: ["A. Data can only be read but not modified", "B. Data is stored with pre-defined instructions that smart contracts can execute", "C. Data is encrypted and locked forever", "D. Data must be manually updated by developers"],
-                correct: 1
-            },
-            {
-                question: "Which layer powers execution on Irys?",
-                options: ["A. Solana VM", "B. Filecoin VM", "C. IrysVM (EVM-compatible)", "D. Bitcoin Script"],
-                correct: 2
-            },
-            {
-                question: "What is unique about Irys compared to other blockchains?",
-                options: ["A. It has the fastest token swaps", "B. It integrates storage and execution natively", "C. It has no miner incentives", "D. It uses only temporary data storage"],
-                correct: 1
-            },
-            {
-                question: "What type of blockchain is Irys?",
-                options: ["A. Execution-only", "B. Storage-only", "C. Integrated storage + execution", "D. Gaming-focused chain"],
-                correct: 2
-            },
-            {
-                question: "Which problem did early datachains fail to solve?",
-                options: ["A. Affordable storage", "B. Making stored data useful and programmable", "C. Token inflation", "D. Offchain compute"],
-                correct: 1
-            },
-            {
-                question: "Irys enables smart contracts to:",
-                options: ["A. Only read static data", "B. Read and write data natively", "C. Send emails", "D. Run only payments"],
-                correct: 1
-            },
-            {
-                question: "Which of these is NOT a benefit of Irys?",
-                options: ["A. Verifiable storage", "B. Programmable data", "C. Unpredictable costs", "D. EVM compatibility"],
-                correct: 2
-            },
-            {
-                question: "Irys positions itself as:",
-                options: ["A. The AWS of Web3", "B. A DeFi exchange", "C. A centralized data provider", "D. A cross-chain bridge"],
-                correct: 0
-            },
-            {
-                question: "On Irys, data can:",
-                options: ["A. Only sit idle once uploaded", "B. Carry enforceable instructions for contracts and AI agents", "C. Be deleted automatically after 30 days", "D. Only be retrieved through centralized APIs"],
-                correct: 1
-            },
-            {
-                question: "Which use case highlights programmable data?",
-                options: ["A. Social media posting", "B. Onchain dataset licensing with automated royalties", "C. Peer-to-peer token transfers", "D. Gasless NFT minting"],
-                correct: 1
-            },
-            {
-                question: "What enables AI agents to coordinate workflows on Irys?",
-                options: ["A. Offchain databases", "B. Programmable data", "C. Email notifications", "D. Centralized schedulers"],
-                correct: 1
-            },
-            {
-                question: "Which industries benefit most from programmable data?",
-                options: ["A. Only DeFi projects", "B. AI, IP, gaming/NFTs, and enterprises", "C. Only Bitcoin miners", "D. Only Web2 cloud providers"],
-                correct: 1
-            },
-            {
-                question: "A dataset on Irys can embed:",
-                options: ["A. Royalty rules", "B. Access permissions", "C. Automated payments", "D. All of the above"],
-                correct: 3
-            },
-            {
-                question: "What does Irys ensure for AI computations?",
-                options: ["A. That results are unverifiable", "B. That every step is proven with cryptographic proofs", "C. That jobs can only run offchain with no audit", "D. That only partial data is stored"],
-                correct: 1
-            },
-            {
-                question: "Why is verifiable compute important?",
-                options: ["A. Prevents GPU providers from overcharging for incomplete jobs", "B. Makes storage more expensive", "C. Slows down inference intentionally", "D. Allows speculative token pricing"],
-                correct: 0
-            },
-            {
-                question: "What type of proofs does Irys use for compute?",
-                options: ["A. Matrix proofs", "B. Layer-by-layer cryptographic proofs", "C. Oracle attestations", "D. Legal contracts"],
-                correct: 1
-            },
-            {
-                question: "Who benefits from verifiable compute?",
-                options: ["A. Only GPU farms", "B. AI developers, GPU providers, users, and AI agents", "C. Only smart contract lawyers", "D. None—it adds no value"],
-                correct: 1
-            },
-            {
-                question: "How does Irys handle heavy GPU tasks?",
-                options: ["A. Runs them entirely onchain at high cost", "B. Offloads them offchain with verifiable proofs", "C. Requires miners to complete them manually", "D. Doesn't allow compute jobs"],
-                correct: 1
-            },
-            {
-                question: "What prevents incomplete jobs from being paid for?",
-                options: ["A. Human audits", "B. Smart contracts checking compute proofs", "C. Miner honesty", "D. Token price fluctuations"],
-                correct: 1
-            },
-            {
-                question: "Which group can independently verify work on Irys?",
-                options: ["A. Only developers", "B. AI agents", "C. Token holders", "D. Exchanges"],
-                correct: 1
-            },
-            {
-                question: "What happens if compute proofs don't match expected epochs?",
-                options: ["A. Payment can be denied", "B. The job auto-restarts", "C. The GPU is confiscated", "D. The miner exits"],
-                correct: 0
-            },
-            {
-                question: "What does verifiability ensure for AI users?",
-                options: ["A. Transparency and auditability", "B. Faster token swaps", "C. Encrypted datasets", "D. Unlimited free storage"],
-                correct: 0
-            },
-            {
-                question: "What problem do current compute marketplaces have?",
-                options: ["A. Centralized job coordination", "B. Verified execution", "C. Low latency", "D. Integration with Irys"],
-                correct: 0
-            },
-            {
-                question: "What anchors Irys storage pricing?",
-                options: ["A. Ethereum gas prices", "B. HDD hardware costs", "C. Token speculation", "D. Bitcoin transaction fees"],
-                correct: 1
-            },
-            {
-                question: "How much cheaper is Irys compared to Arweave (approx)?",
-                options: ["A. 2×", "B. 5×", "C. 10×", "D. ~20×"],
-                correct: 3
-            },
-            {
-                question: "Which storage models does Irys support?",
-                options: ["A. Permanent only", "B. Temporary only", "C. Both permanent and term-based storage", "D. Cloud subscription only"],
-                correct: 2
-            },
-            {
-                question: "Why is predictable pricing important for developers?",
-                options: ["A. It ensures stable budgets and avoids token volatility", "B. It increases arbitrage opportunities", "C. It makes retrieval slower", "D. It prevents decentralization"],
-                correct: 0
-            },
-            {
-                question: "Which architecture allows Irys to handle massive AI datasets?",
-                options: ["A. Single ledger", "B. Multi-ledger", "C. DAG-only structure", "D. Sidechain anchors"],
-                correct: 1
-            },
-            {
-                question: "Which storage system avoids bottlenecks in Irys?",
-                options: ["A. Partition-based multi-ledger design", "B. Token auctions", "C. Oracles", "D. Cloud gateways"],
-                correct: 0
-            },
-            {
-                question: "Which industries need stable dataset costs most?",
-                options: ["A. AI startups and enterprises", "B. Bitcoin miners", "C. Gaming consoles", "D. Retail banks"],
-                correct: 0
-            },
-            {
-                question: "What is a key difference from Filecoin?",
-                options: ["A. Irys supports permanent storage; Filecoin is term-limited", "B. Both only do term storage", "C. Irys requires auction markets", "D. Filecoin has faster retrieval"],
-                correct: 0
-            },
-            {
-                question: "What makes Arweave pricing unstable?",
-                options: ["A. Anchored to HDDs", "B. Pegged to volatile AR token", "C. Fixed USD price", "D. Miner subsidies"],
-                correct: 1
-            },
-            {
-                question: "Irys storage pricing is best described as:",
-                options: ["A. True at-cost", "B. Auction-based", "C. Token speculation", "D. Variable daily"],
-                correct: 0
-            },
-            {
-                question: "What is IrysVM?",
-                options: ["A. A non-programmable ledger", "B. A modified Ethereum Virtual Machine designed for data-heavy apps", "C. A Bitcoin consensus script", "D. A Solana runtime copy"],
-                correct: 1
-            },
-            {
-                question: "Why does EVM compatibility matter?",
-                options: ["A. It lets Ethereum developers use familiar tools", "B. It makes mining more profitable", "C. It removes smart contract execution entirely", "D. It forces new programming languages"],
-                correct: 0
-            },
-            {
-                question: "What is unique about IrysVM vs Ethereum's EVM?",
-                options: ["A. It can directly read and write stored data", "B. It can't run Solidity contracts", "C. It has no smart contract support", "D. It is slower than EVM"],
-                correct: 0
-            },
-            {
-                question: "Which group benefits from EVM compatibility?",
-                options: ["A. Only Bitcoin miners", "B. AI startups and agents", "C. Only NFT artists", "D. Centralized exchanges"],
-                correct: 1
-            },
-            {
-                question: "What new capability does IrysVM unlock?",
-                options: ["A. Smart contracts can act directly on data", "B. Faster token price speculation", "C. Cheaper token swaps", "D. Mining centralization"],
-                correct: 0
-            },
-            {
-                question: "Which apps can connect to Irys easily?",
-                options: ["A. Ethereum-compatible apps", "B. Bitcoin Lightning apps", "C. Solana dApps only", "D. Cosmos SDK apps"],
-                correct: 0
-            }
-        ];
+    {
+        "question": "What is miner pledge in Irys?",
+        "options": ["B. ETH gas deposit", "C. Commitment of storage capacity with staking", "A. Central admin approval", "D. NFT minting fee"],
+        "correct": 1
+    },
+    {
+        "question": "What is programmable accuracy enforcement?",
+        "options": ["D. Users vote on accuracy", "B. Offchain reviewers grade datasets", "A. Contracts reject low-quality outputs automatically", "C. Miners manually approve results"],
+        "correct": 2
+    },
+    {
+        "question": "What is trustless dataset monetization?",
+        "options": ["D. Smart contracts enforce payments directly on data usage", "B. Manual revenue distribution", "C. Miner-controlled licensing", "A. Offchain token payments"],
+        "correct": 0
+    },
+    {
+        "question": "What are ingress proofs?",
+        "options": ["B. Miner staking receipts", "C. Token transfer confirmations", "A. Proofs of upload and replication correctness", "D. NFT metadata checks"],
+        "correct": 2
+    },
+    {
+        "question": "What is collaborative agent fact-checking?",
+        "options": ["C. Miners check outputs manually", "A. Agents cross-verify outputs trustlessly on Irys", "D. Agents trust one central authority", "B. Agents delete outputs after 24 hours"],
+        "correct": 1
+    },
+    {
+        "question": "What happens in disorderly miner departure?",
+        "options": ["C. Miner gets more rewards", "D. Miner is promoted", "A. Miner forfeits stake", "B. Miner keeps storage free"],
+        "correct": 2
+    },
+    {
+        "question": "What is the role of gateways in Irys?",
+        "options": ["D. Index and serve data with query APIs", "A. Store offchain databases", "C. Replace miners", "B. Generate blocks"],
+        "correct": 0
+    },
+    {
+        "question": "What is verifiable data provenance?",
+        "options": ["D. Token-only pricing", "C. Miner-controlled metadata", "A. Tracking dataset origin and modifications cryptographically", "B. Offchain proof systems"],
+        "correct": 2
+    },
+    {
+        "question": "How does Irys handle inference verification?",
+        "options": ["C. Deletes outputs immediately", "B. Relies on offchain marketplaces", "D. Ignores results", "A. Hashes and stores inference results onchain"],
+        "correct": 3
+    },
+    {
+        "question": "Why are miners incentivized for accuracy in pricing?",
+        "options": ["C. Miners gain rewards for errors", "B. Prices are set centrally", "A. Inaccurate prices can get blocks rejected", "D. Token auctions fix mistakes"],
+        "correct": 2
+    },
+    {
+        "question": "What are data partitions?",
+        "options": ["C. Token transfer channels", "A. Partitions actively storing ledger data", "B. Miner-only logs", "D. Offchain servers"],
+        "correct": 1
+    },
+    {
+        "question": "What is incentivized dataset creation?",
+        "options": ["D. Offchain rewards", "B. Free storage for everyone", "C. Miner-only rewards", "A. Programmable rewards for valid, high-quality data"],
+        "correct": 3
+    },
+    {
+        "question": "What is verifiable multi-layer inference?",
+        "options": ["C. Offchain inference logs only", "B. Token auctions for inference", "A. Proofs posted layer by layer during model execution", "D. Miners guessing results"],
+        "correct": 2
+    },
+    {
+        "question": "What is the challenge-response system?",
+        "options": ["A. Developers must sign challenges", "D. A user must pay extra fees", "B. Miners vote on token inflation", "C. A miner must prove storage availability on request"],
+        "correct": 3
+    },
+    {
+        "question": "What is the role of Merkle roots in Irys?",
+        "options": ["B. Ensure tamper-proof data integrity", "D. Generate staking rewards", "C. Compress NFT metadata", "A. Store token balances"],
+        "correct": 0
+    },
+    {
+        "question": "Why does Irys use multi-ledger design?",
+        "options": ["B. To delete old data", "C. To slow down validation", "D. To centralize mining", "A. To separate temporary and permanent storage efficiently"],
+        "correct": 3
+    },
+    {
+        "question": "How does Irys enforce miner accountability?",
+        "options": ["A. By central admin checks", "C. By deleting partitions randomly", "B. By slashing and staking penalties", "D. By letting miners self-report"],
+        "correct": 2
+    },
+    {
+        "question": "Why is replication across partitions important?",
+        "options": ["A. Creates token inflation", "C. Slows retrieval", "B. Provides redundancy and global availability", "D. Reduces miner accountability"],
+        "correct": 2
+    },
+    {
+        "question": "What is miner reward tied to?",
+        "options": ["D. Random token inflation", "C. Offchain licenses", "B. Miner vote shares", "A. Valid storage proofs"],
+        "correct": 3
+    },
+    {
+        "question": "What are multiple blocklanes?",
+        "options": ["C. Miner-only message channels", "A. Special lanes for token transfers, storage, and contracts separately", "B. NFT-only transaction pools", "D. Centralized APIs"],
+        "correct": 1
+    },
+    {
+        "question": "What is swarm coordination in Irys?",
+        "options": ["D. AI agents working together to curate/verify data", "C. GPUs sharing idle compute", "A. Miners pooling storage", "B. Token holders voting"],
+        "correct": 0
+    },
+    {
+        "question": "What does Irys ultimately provide for AI?",
+        "options": ["D. Token speculation", "C. Temporary storage only", "A. Expensive storage only", "B. Verifiable, affordable data + compute integration"],
+        "correct": 3
+    },
+    {
+        "question": "What is capacity partition?",
+        "options": ["C. Token ledger backups", "A. Miner reward accounts", "B. NFT-only storage", "D. Standby storage ready to be activated"],
+        "correct": 3
+    },
+    {
+        "question": "Why is miner proof generation continuous?",
+        "options": ["D. To run GPUs for inference", "C. To delete old data", "A. To prove they maintain assigned data", "B. To inflate token price"],
+        "correct": 2
+    },
+    {
+        "question": "What is trustless compute offloading?",
+        "options": ["D. AI models deleting logs", "B. Offchain compute verified by onchain proofs", "A. Miner guessing workloads", "C. Centralized compute renting"],
+        "correct": 1
+    },
+    {
+        "question": "Why is orderly scaling possible in Irys?",
+        "options": ["A. Only one ledger exists", "B. Data is limited", "C. Miner centralization", "D. Capacity partitions onboard ahead of demand"],
+        "correct": 3
+    },
+    {
+        "question": "What are capacity partitions?",
+        "options": ["A. Miner reward accounts", "B. NFT-only storage", "C. Token ledger backups", "D. Standby storage ready to be activated"],
+        "correct": 3
+    },
+    {
+        "question": "What is dataset quality validation?",
+        "options": ["A. Random checks by miners", "B. Onchain validation against benchmarks", "C. Manual checks by admins", "D. Offchain review boards"],
+        "correct": 1
+    },
+    {
+        "question": "How does Irys support flexible storage?",
+        "options": ["D. Stores only small files", "B. Supports both term-based and permanent ledgers", "C. Only supports permanent data", "A. Deletes data after 30 days"],
+        "correct": 1
+    },
+    {
+        "question": "What are blocklanes useful for?",
+        "options": ["C. Make storage more expensive", "D. Eliminate verifiability", "B. Reduce miner incentives", "A. Prevent transaction types from competing"],
+        "correct": 3
+    },
+    {
+        "question": "What is optimistic cache in gateways?",
+        "options": ["A. Miner reward tracker", "C. Token balance cache", "B. A storage layer for less frequently accessed data", "D. Offchain CDN"],
+        "correct": 2
+    },
+    {
+        "question": "What does “royalties & revenue sharing” mean on Irys?",
+        "options": ["D. Revenues are stored offchain", "B. Only token holders earn royalties", "C. Miners decide payouts manually", "A. Contributors automatically get payouts for dataset usage"],
+        "correct": 3
+    },
+    {
+        "question": "What is Exponential Moving Average used for?",
+        "options": ["A. To stabilize USD/IRYS pricing", "B. To compute miner hashpower", "C. To validate NFTs", "D. To compress transactions"],
+        "correct": 0
+    },
+    {
+        "question": "Why is Irys efficient for large-scale AI training sets?",
+        "options": ["B. Data is slow to access", "C. Data is unverifiable", "D. Only small datasets are supported", "A. Data retrieval is instant, storage is low-cost"],
+        "correct": 3
+    },
+    {
+        "question": "How does Irys prevent storage bottlenecks?",
+        "options": ["D. Multi-ledger design + partitions", "C. Token inflation", "A. Centralized admin checks", "B. Reducing miner rewards"],
+        "correct": 0
+    },
+    {
+        "question": "What is programmable data execution?",
+        "options": ["C. Offchain metadata execution", "A. Miner-chosen rules", "B. Data deleted after retrieval", "D. Data embedded with logic usable by contracts"],
+        "correct": 3
+    },
+    {
+        "question": "What happens in orderly miner departure?",
+        "options": ["D. Miner deletes partitions", "C. Miner forfeits all rewards", "B. Miner exits gracefully, storage reassigned", "A. Miner centralizes the ledger"],
+        "correct": 2
+    },
+    {
+        "question": "What is proof-of-compute?",
+        "options": ["D. Miner wallet balances", "B. Token staking evidence", "A. Cryptographic proofs showing each compute step was done", "C. NFT transaction confirmations"],
+        "correct": 2
+    },
+    {
+        "question": "How does Irys VM improve scaling?",
+        "options": ["A. Centralizing execution", "D. By removing verifiability", "C. By increasing ETH gas fees", "B. By separating storage and contract lanes"],
+        "correct": 3
+    },
+    {
+        "question": "What is secondary market for AI models & data?",
+        "options": ["C. Miner hashpower auctions", "B. Offchain marketplaces", "D. Centralized file hosting", "A. A resale market for datasets and trained models on Irys"],
+        "correct": 3
+    },
+    {
+        "question": "What is programmable access control?",
+        "options": ["C. Token auctions", "D. Rules inside data that define who can access", "A. Miner-only permissions", "B. Offchain admin panels"],
+        "correct": 1
+    }
+];
 
         function shuffleArray(array) {
             const shuffled = [...array];
@@ -1769,3 +1769,4 @@
 </body>
 
 </html>
+
