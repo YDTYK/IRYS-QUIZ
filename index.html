@@ -640,6 +640,68 @@
                 justify-content: center;
             }
         }
+
+        /* New styles for notes section */
+        .notes-section {
+            background: rgba(240, 244, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 25px;
+            border: 1px solid rgba(220, 226, 255, 0.8);
+            margin-top: 30px;
+        }
+
+        .notes-section h3 {
+            color: #4f46e5;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        #notes-area {
+            width: 100%;
+            min-height: 150px;
+            padding: 15px;
+            border-radius: 12px;
+            border: 2px solid #e0e6ff;
+            background: #f8f9ff;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: #333;
+            resize: vertical;
+            transition: border-color 0.3s ease;
+        }
+
+        #notes-area:focus {
+            outline: none;
+            border-color: #6366f1;
+            box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+        }
+
+        .notes-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .notes-buttons .button {
+            padding: 10px 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: normal;
+            border-radius: 12px;
+        }
+
+        .notes-buttons .save-notes {
+            background: linear-gradient(135deg, #14b8a6, #0d9488);
+        }
+
+        .notes-buttons .clear-notes {
+            background: linear-gradient(135deg, #ef4444, #dc2626);
+        }
     </style>
 </head>
 <body>
@@ -651,7 +713,6 @@
                 <h1 class="logo">IRYS</h1>
                 <p class="subtitle">Knowledge Quiz</p>
                 
-                <!-- Wallet Connect Section -->
                 <div class="wallet-section">
                     <div id="wallet-disconnect" class="wallet-status connected" style="display: none;">
                         <div class="wallet-info">
@@ -668,7 +729,6 @@
                 </div>
             </div>
 
-            <!-- Start Screen -->
             <div id="start-screen" class="start-screen">
                 <p class="start-description">
                     Test your knowledge about Irys - the first programmable datachain that integrates storage and execution natively. 
@@ -696,7 +756,6 @@
                 </div>
             </div>
 
-            <!-- Learn Menu Screen -->
             <div id="learn-screen" style="display: none;">
                 <div class="learn-header">
                     <h2 style="color: #14b8a6; font-size: 2rem; margin-bottom: 20px; text-align: center;">Learn About Irys</h2>
@@ -747,15 +806,22 @@
                 </div>
             </div>
 
-            <!-- Topic Detail Screen -->
             <div id="topic-screen" style="display: none;">
                 <div class="topic-content">
                     <button class="back-button" onclick="showLearnMenu()" style="background: none; border: 2px solid #14b8a6; color: #14b8a6; padding: 8px 16px; border-radius: 8px; margin-bottom: 20px; cursor: pointer;">← Back to Topics</button>
                     <div id="topic-detail"></div>
                 </div>
+
+                <div class="notes-section">
+                    <h3>My Notes</h3>
+                    <textarea id="notes-area" placeholder="Jot down key points as you learn..."></textarea>
+                    <div class="notes-buttons">
+                        <button class="button save-notes" onclick="saveNotes()">Save Notes</button>
+                        <button class="button clear-notes" onclick="clearNotes()">Clear Notes</button>
+                    </div>
+                </div>
             </div>
 
-            <!-- Quiz Screen -->
             <div id="quiz-screen" style="display: none;">
                 <div class="timer" id="timer">
                     <span class="timer-icon">⏰</span>
@@ -779,7 +845,6 @@
                 </div>
             </div>
 
-            <!-- Result Screen -->
             <div id="result-screen" class="result-container">
                 <div class="score-circle">
                     <div class="score-text" id="score-display"></div>
@@ -815,6 +880,9 @@
         let timeLeft = 180; // 3 minutes in seconds
         let timerInterval = null;
         let autoAdvanceTimeout = null;
+
+        // New global variable for notes
+        let currentTopicId = null;
 
         const allQuestions = [
     {
@@ -1022,8 +1090,7 @@
         "options": ["A. Token auctions", "B. Rules inside data that define who can access", "C. Miner-only permissions", "D. Offchain admin panels"],
         "correct": 1
     }
-]
-;
+];
 
         function shuffleArray(array) {
             const shuffled = [...array];
@@ -1216,7 +1283,7 @@
             `;
 
             // Update Twitter share link
-            const twitterText = `I just scored ${percentage}% on the Irys Knowledge Quiz in ${timeDisplay}! 🚀 Test your understanding of the first programmable datachain at https://irys-quizmaster.vercel.app, This app was built WITH ❤️ by @Mko18002`;
+            const twitterText = `I just scored ${percentage}% on the Irys Knowledge Quiz in ${timeDisplay}! 🚀 Test your understanding of the first programmable datachain at`;
             document.getElementById('twitter-share').href = `https://twitter.com/intent/tweet?text=${encodeURIComponent(twitterText)}`;
         }
 
@@ -1345,6 +1412,8 @@
             document.getElementById('learn-screen').style.display = 'none';
             document.getElementById('topic-screen').style.display = 'block';
             
+            currentTopicId = topicId; // Store the current topic ID
+
             const topics = {
                 'what-is-irys': {
                     icon: '🚀',
@@ -1546,10 +1615,41 @@
                     </div>
                 `;
             }
+
+            // Load saved notes for the current topic
+            loadNotes(currentTopicId);
         }
 
         function returnToQuiz() {
             showStartScreen();
+        }
+
+        // New notes functions
+        function loadNotes(topicId) {
+            const notes = localStorage.getItem(`irys_notes_${topicId}`);
+            const notesArea = document.getElementById('notes-area');
+            if (notesArea) {
+                notesArea.value = notes || '';
+            }
+        }
+
+        function saveNotes() {
+            if (!currentTopicId) return;
+            const notesArea = document.getElementById('notes-area');
+            if (notesArea) {
+                localStorage.setItem(`irys_notes_${currentTopicId}`, notesArea.value);
+                alert('Notes saved successfully!');
+            }
+        }
+
+        function clearNotes() {
+            if (!currentTopicId) return;
+            const notesArea = document.getElementById('notes-area');
+            if (notesArea) {
+                notesArea.value = '';
+                localStorage.removeItem(`irys_notes_${currentTopicId}`);
+                alert('Notes cleared!');
+            }
         }
 
         // Wallet Connect Functions
@@ -1768,8 +1868,4 @@
         }
     </script>
 </body>
-
 </html>
-
-
-
